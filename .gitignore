@@ -1,0 +1,42 @@
+﻿# Build outputs
+**/bin/
+**/obj/
+.vs/
+[Bb]uild/
+dist/
+dist-*/
+publish/
+
+# Local runtimes and generated environments
+runtime/
+.venv/
+venv/
+__pycache__/
+
+# Local backups and temporary files
+_backup*/
+*.backup-*
+*.tmp
+*.log
+
+# Visual Studio user files
+*.user
+*.suo
+*.pdb
+
+# Memory card images and personal save data
+*.ps2
+*.max
+*.psu
+*.cbs
+*.sps
+*.psv
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Legacy prototype kept outside the current App project
+/Program.cs
+

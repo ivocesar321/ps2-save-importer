@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>latest</LangVersion>
+    <!-- Se o .NET 8 não estiver instalado, usa um runtime mais novo (10/11) em vez de falhar. -->
+    <RollForward>LatestMajor</RollForward>
+
+    <AssemblyName>PS2SaveImporter</AssemblyName>
+    <RootNamespace>Ps2SaveImporter</RootNamespace>
+    <ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+
+    <Version>2.0.0</Version>
+    <Product>PS2 Save Importer</Product>
+    <Authors>Ivo César</Authors>
+    <Company>Ivo César</Company>
+    <Copyright>© 2026 Ivo César</Copyright>
+    <Description>Importa saves de PlayStation 2 para Memory Cards do PCSX2. Projeto independente, não oficial.</Description>
+
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <ErrorReport>none</ErrorReport>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Recursos embutidos: MyMC é extraído em LocalAppData durante a execução. -->
+    <EmbeddedResource Include="mymc.exe" LogicalName="Ps2SaveImporter.mymc.exe" />
+    <EmbeddedResource Include="Assets\AppIcon.ico" LogicalName="AppIcon.ico" />
+  </ItemGroup>
+
+</Project>

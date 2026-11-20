@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PS2 Memory Card Manager</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="mark" aria-hidden="true"></div>
+      <div>
+        <h1>PS2 Memory Card Manager</h1>
+        <p id="sessionLabel">No card loaded</p>
+      </div>
+    </div>
+    <div class="toolbar">
+      <label class="fileButton">
+        <input id="cardInput" type="file" accept=".ps2,.mcd,.bin">
+        Open Card
+      </label>
+      <button id="newCardBtn" type="button">New Card</button>
+      <label class="check">
+        <input id="eccToggle" type="checkbox" checked>
+        ECC
+      </label>
+      <button id="downloadCardBtn" type="button" disabled>Download Card</button>
+      <button id="saveBackBtn" type="button" disabled>Save Back</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="sidebar">
+      <div class="meter">
+        <div class="meterTop">
+          <span>Used</span>
+          <strong id="usedLabel">0 KB</strong>
+        </div>
+        <div class="bar" aria-hidden="true"><span id="usageBar"></span></div>
+        <div class="meterBottom">
+          <span id="freeLabel">0 KB free</span>
+          <span id="totalLabel">0 KB total</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <label class="fileButton wide">
+          <input id="saveInput" type="file" accept=".psu,.max,.cbs,.sps,.psv">
+          Import Save
+        </label>
+        <label class="check">
+          <input id="overwriteToggle" type="checkbox">
+          Overwrite
+        </label>
+      </div>
+
+      <div class="localTools">
+        <div class="localTop">
+          <strong>PCSX2 Cards</strong>
+          <button id="refreshLocalBtn" type="button">Refresh</button>
+        </div>
+        <select id="localCardSelect" disabled>
+          <option value="">No cards loaded</option>
+        </select>
+        <button id="openLocalBtn" class="wide" type="button" disabled>Open Selected</button>
+      </div>
+
+      <div class="status" id="status" role="status"></div>
+    </section>
+
+    <section class="content">
+      <div class="tableHeader">
+        <h2>Save Files</h2>
+        <span id="countLabel">0 saves</span>
+      </div>
+      <div class="tableWrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Directory</th>
+              <th>Title</th>
+              <th>Size</th>
+              <th>Protection</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="saveRows">
+            <tr class="empty"><td colspan="5">No card loaded</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

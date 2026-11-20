@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ps2-memory-card-manager"
+version = "0.1.0"
+description = "A Python 3 web UI for editing PS2 memory cards and importing saves into PCSX2."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Unlicense" }
+authors = [
+  { name = "Ross Ridge" },
+]
+maintainers = [
+  { name = "lawlmoeaung" },
+]
+keywords = ["pcsx2", "ps2", "playstation-2", "memory-card", "save-files", "save-manager", "save-editor", "psv", "psu", "fastapi"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Framework :: FastAPI",
+  "License :: OSI Approved :: The Unlicense (Unlicense)",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Utilities",
+]
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.30",
+  "python-multipart>=0.0.9",
+]
+
+[project.urls]
+Homepage = "https://github.com/lawlmoeaung/ps2-memory-card-manager"
+Repository = "https://github.com/lawlmoeaung/ps2-memory-card-manager"
+Issues = "https://github.com/lawlmoeaung/ps2-memory-card-manager/issues"
+
+[project.optional-dependencies]
+dev = [
+  "httpx2>=0.28",
+  "pytest>=8.0",
+]
+
+[tool.setuptools]
+py-modules = [
+  "gui",
+  "guires",
+  "lzari",
+  "mymc",
+  "ps2mc",
+  "ps2mc_dir",
+  "ps2mc_ecc",
+  "ps2save",
+  "round",
+  "sjistab",
+  "verbuild",
+  "webapp",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

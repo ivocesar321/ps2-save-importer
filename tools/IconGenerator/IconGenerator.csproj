@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Ferramenta de desenvolvimento: gera Assets\AppIcon.ico (e uma pré-visualização PNG) a partir da marca vetorial. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>IconGenerator</RootNamespace>
+    <RollForward>LatestMajor</RollForward>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\App\UI\BrandIcon.cs" Link="BrandIcon.cs" />
+    <Compile Include="..\..\App\UI\Theme.cs" Link="Theme.cs" />
+  </ItemGroup>
+
+</Project>
